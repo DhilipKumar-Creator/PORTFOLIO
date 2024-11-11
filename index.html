@@ -66,6 +66,7 @@
             text-decoration: none;
             font-size: 1em;
             transition: color 0.3s;
+            cursor: pointer;
         }
         .nav a:hover {
             color: #ffffff;
@@ -144,9 +145,9 @@
     <h1>Dhilip Kumar S</h1>
     <p>Artificial Intelligence & Data Science Department</p>
     <nav class="nav">
-        <a href="#about">About</a>
-        <a href="#projects">Projects</a>
-        <a href="#contact">Contact</a>
+        <a href="#about" onclick="scrollToSection(event, 'about')">About</a>
+        <a href="#projects" onclick="scrollToSection(event, 'projects')">Projects</a>
+        <a href="#contact" onclick="scrollToSection(event, 'contact')">Contact</a>
     </nav>
 </header>
 
@@ -184,6 +185,13 @@
 </footer>
 
 <script>
+   
+    function scrollToSection(event, sectionId) {
+        event.preventDefault();
+        document.getElementById(sectionId).scrollIntoView({ behavior: 'smooth' });
+    }
+
+ 
     window.addEventListener('scroll', function() {
         const containers = document.querySelectorAll('.container');
         containers.forEach(container => {
